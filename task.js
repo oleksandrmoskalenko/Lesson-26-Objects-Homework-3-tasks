@@ -26,7 +26,7 @@ let showInfo = (maker, model, year, avgSpeed) => {
 let calcHours = (distance) => {
     let hours = (distance / carProfile["average speed (in km/h)"]) + Math.floor(distance / (4 * carProfile["average speed (in km/h)"]))
     if (distance % (4 * carProfile["average speed (in km/h)"]) == 0) hours--
-    if (distance == '') hours = 0
+    if (distance == '' || distance == 0) hours = 0
     $task12Result.innerText = `Time to cover the distance is: ${hours}`
     $task1Field.value = ''
 }
