@@ -14,7 +14,7 @@ let carProfile = {
     "average speed (in km/h)": 70
 }
 
-// console.log(carProfile)
+console.log(carProfile)
 
 let showInfo = (maker, model, year, avgSpeed) => {
     $task11Result.innerText = `manufacturer: ${carProfile.manufacturer} 
@@ -25,7 +25,7 @@ let showInfo = (maker, model, year, avgSpeed) => {
 
 let calcHours = (distance) => {
     let hours = (distance / carProfile["average speed (in km/h)"]) + Math.floor(distance / (4 * carProfile["average speed (in km/h)"]))
-    if (Number.isInteger(hours)) hours--
+    if (Number.isInteger(hours) && hours % (4 * carProfile["average speed (in km/h)"]) == 0) hours--
     if (distance == '') hours = 0
     $task12Result.innerText = `Time to cover the distance is: ${hours}`
     $task1Field.value = ''
